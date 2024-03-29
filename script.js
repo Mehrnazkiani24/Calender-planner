@@ -27,10 +27,21 @@ $(function () {
     console.log(timeBlockId,userEntry)
     localStorage.setItem(timeBlockId,userEntry)
   })
+  var currentHour = dayjs().hour()
+  console.log("Current Hour",currentHour)
   for(let i=9;i<=17;i++){
     var blkid = "hour-"+i
     var data = localStorage.getItem(blkid)
     console.log(data)
     $("#"+blkid).children(".description").val(data)
+    if(currentHour < i){
+      $("#"+blkid).addClass("future")
+    }
+    else if (currentHour == i ){
+      $("#"+blkid).addClass("present")
+    }
+    else {
+      $("#"+blkid).addClass("past")
+    }
   }
 });
