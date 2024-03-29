@@ -27,4 +27,10 @@ $(function () {
     console.log(timeBlockId,userEntry)
     localStorage.setItem(timeBlockId,userEntry)
   })
+  for(let i=9;i<=17;i++){
+    var blkid = "hour-"+i
+    var data = localStorage.getItem(blkid)
+    console.log(data)
+    $("#"+blkid).children(".description").val(data)
+  }
 });
