@@ -44,4 +44,5 @@ $(function () {
       $("#"+blkid).addClass("past")
     }
   }
+  $("#currentDay").text(dayjs().format("MM/DD/YYYY"))
 });
