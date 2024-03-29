@@ -20,4 +20,11 @@ $(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
+  $(".saveBtn").on("click",function(e){
+    e.preventDefault()
+    var userEntry = $(this).siblings(".description").val()
+    var timeBlockId = $(this).parent().attr("id")
+    console.log(timeBlockId,userEntry)
+    localStorage.setItem(timeBlockId,userEntry)
+  })
 });
